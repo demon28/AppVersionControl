@@ -1,0 +1,113 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(solutiondir)HerosAllies.Entities\bin\release\HerosAllies.Entities.dll" #>
+<#@ assembly name="e:\winnerworkspace\CU\DLL_Library\Javirs.Common\Net40mvc5\Javirs.Common.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="Javirs.Common" #>
+<#@ output extension=".js" #>
+
+<#
+	Assembly ass = Assembly.LoadFrom(@"E:\WinnerWorkspace\CU\Source\HerosAllies\HerosAllies.Entities\bin\release\HerosAllies.Entities.dll");
+	Type[] types = ass.GetTypes();
+	WriteLine("window.enumCollection={");
+	foreach(Type t in types){
+	if(!t.IsEnum){
+		continue;
+	}
+	
+	WriteLine("\t"+t.Name+" : [");
+	var names = Enum.GetNames(t);
+	
+	foreach(string name in names){
+		var attr = GetDisplayText(t.GetField(name));
+		string text = name;
+		if(attr!=null)
+        {
+			text = attr.Text;
+		}
+		WriteLine("\t\t[\""+text+"\" , "+(int)Enum.Parse(t,name)+"],");
+    }
+	WriteLine("\t],");
+    }
+	WriteLine("}");
+	
+ #>
+
+ function renderEnum(type,value){
+     var array = window.enumCollection[type];
+     if (!array) {
+         return value;
+     }
+     for (var i in array) {
+         if (array[i][1] == value) {
+             return array[i][0]
+         }
+     }
+ }
+ ;(function($){
+	$.fn.extend({
+		bindEnum:function(type,defaultItem){
+			var array = window.enumCollection[type];
+			if(!array){
+				return $(this);
+			}
+			var tag = $(this).get(0).tagName;					
+			for(var i in array){
+				var option = $("<option></option>");	
+				option.val(array[i][1]).text(array[i][0]);
+				$(this).append(option);
+			}
+			if (typeof defaultItem == 'int') {
+			    $(this).find("option[value=" + defaultItem + "]").attr("selected", "selected");
+			}
+			if (typeof defaultItem == 'object') {
+			    var defaultoption = $("<option selected='selected'></option>").val(defaultItem.value).text(defaultItem.text);
+			    $(this).append(defaultoption);
+			}
+			return $(this);
+		},
+        remoteBind: function (json) {
+            var $this = $(this);
+            $.ajax({
+                url: json.url,
+                data: json.data,
+                type: "POST",
+                success: function (res) {
+                    if (res.Success) {
+                        if (res.Content && res.Content.Data && res.Content.Data.length > 0) {
+                            $this.append($("<option value='-1' selected='selected'>===所有===</option>"));
+                            for (var i in res.Content.Data) {
+                                var item = res.Content.Data[i];
+                                var option = $("<option></option>");
+                                option.val(item.value).text(item.text);
+                                $this.append(option);
+                            }
+                        }
+                    } else {
+                        var err = $("<option></option>");
+                        err.val(-1).text(res.Message).attr("selected", "selected");
+                        $this.append(err);
+                    }
+                },
+                error: function () {
+
+                }
+            });
+        }
+	});
+ })(jQuery);
+<#+ 
+		private static DisplayTextAttribute GetDisplayText(MemberInfo property)
+        {
+            var attrs = property.GetCustomAttributes(typeof(DisplayTextAttribute), true);
+            if (attrs == null || attrs.Length == 0)
+            {
+                return null;
+            }
+            DisplayTextAttribute displayText = attrs[0] as DisplayTextAttribute;
+            return displayText;
+        }
+ #>

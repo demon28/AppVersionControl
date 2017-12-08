@@ -1,0 +1,14 @@
+﻿using AppVersionControl.Api.Models;
+using System.Web;
+using System.Web.Mvc;
+
+namespace AppVersionControl.Api
+{
+    public class FilterConfig
+    {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
+            filters.Add(new ApiErrorHandleAttribute());
+        }
+    }
+}

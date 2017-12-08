@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVersionControl.Api", "AppVersionControl.Api\AppVersionControl.Api.csproj", "{C11CBFE5-31F9-4154-B933-A5ED6D16B214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVersionControl.Entities", "AppVersionControl.Entities\AppVersionControl.Entities.csproj", "{08907FF3-D4B1-43CA-8577-7A5C308400D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVersionControl.DataAccess", "AppVersionControl.DataAccess\AppVersionControl.DataAccess.csproj", "{DE0F8DFA-91FE-4FFD-A383-1967A33D8D42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVersionControl.Facade", "AppVersionControl.Facade\AppVersionControl.Facade.csproj", "{837E13F3-7536-4A83-8396-F85BEE5FC7CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVersionControl.Admin", "AppVersionControl.Admin\AppVersionControl.Admin.csproj", "{01C25231-C3C6-4606-87F0-FEE7AC7C0DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppVersionControl.UnitTest", "AppVersionControl.UnitTest\AppVersionControl.UnitTest.csproj", "{99BF4FB9-10CA-479A-9D08-B7672FBD655C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C11CBFE5-31F9-4154-B933-A5ED6D16B214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11CBFE5-31F9-4154-B933-A5ED6D16B214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11CBFE5-31F9-4154-B933-A5ED6D16B214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11CBFE5-31F9-4154-B933-A5ED6D16B214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08907FF3-D4B1-43CA-8577-7A5C308400D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08907FF3-D4B1-43CA-8577-7A5C308400D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08907FF3-D4B1-43CA-8577-7A5C308400D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08907FF3-D4B1-43CA-8577-7A5C308400D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0F8DFA-91FE-4FFD-A383-1967A33D8D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0F8DFA-91FE-4FFD-A383-1967A33D8D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0F8DFA-91FE-4FFD-A383-1967A33D8D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0F8DFA-91FE-4FFD-A383-1967A33D8D42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837E13F3-7536-4A83-8396-F85BEE5FC7CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837E13F3-7536-4A83-8396-F85BEE5FC7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837E13F3-7536-4A83-8396-F85BEE5FC7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837E13F3-7536-4A83-8396-F85BEE5FC7CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C25231-C3C6-4606-87F0-FEE7AC7C0DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C25231-C3C6-4606-87F0-FEE7AC7C0DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C25231-C3C6-4606-87F0-FEE7AC7C0DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C25231-C3C6-4606-87F0-FEE7AC7C0DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99BF4FB9-10CA-479A-9D08-B7672FBD655C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99BF4FB9-10CA-479A-9D08-B7672FBD655C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99BF4FB9-10CA-479A-9D08-B7672FBD655C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99BF4FB9-10CA-479A-9D08-B7672FBD655C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AppVersionControl.Admin\\AppVersionControl.Admin.csproj
+		SccProjectName1 = AppVersionControl.Admin
+		SccLocalPath1 = AppVersionControl.Admin
+		SccProjectUniqueName2 = AppVersionControl.Api\\AppVersionControl.Api.csproj
+		SccProjectName2 = AppVersionControl.Api
+		SccLocalPath2 = AppVersionControl.Api
+		SccProjectUniqueName3 = AppVersionControl.DataAccess\\AppVersionControl.DataAccess.csproj
+		SccProjectName3 = AppVersionControl.DataAccess
+		SccLocalPath3 = AppVersionControl.DataAccess
+		SccProjectUniqueName4 = AppVersionControl.Entities\\AppVersionControl.Entities.csproj
+		SccProjectName4 = AppVersionControl.Entities
+		SccLocalPath4 = AppVersionControl.Entities
+		SccProjectUniqueName5 = AppVersionControl.Facade\\AppVersionControl.Facade.csproj
+		SccProjectName5 = AppVersionControl.Facade
+		SccLocalPath5 = AppVersionControl.Facade
+		SccProjectUniqueName6 = AppVersionControl.UnitTest\\AppVersionControl.UnitTest.csproj
+		SccProjectName6 = AppVersionControl.UnitTest
+		SccLocalPath6 = AppVersionControl.UnitTest
+	EndGlobalSection
+EndGlobal
